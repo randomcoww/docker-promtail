@@ -11,8 +11,8 @@ RUN set -x \
   && git clone -b $VERSION \
     https://github.com/grafana/loki.git \
   && cd loki \
-  && GOOS=linux GO111MODULE=on CGO_ENABLED=0 \
-    go build -v -a -ldflags '-w -s -extldflags "-static"' -o promtail ./cmd/promtail
+  && CGO_ENABLED=0 GOOS=linux GO111MODULE=on \
+    go build -v -ldflags '-s -w' -o promtail ./cmd/promtail
 
 FROM scratch
 
