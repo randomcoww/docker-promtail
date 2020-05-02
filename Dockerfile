@@ -1,5 +1,5 @@
 FROM golang:1.13-alpine as BUILD
-ENV VERSION v1.2.0
+ENV VERSION v1.4.1
 
 WORKDIR /go/src/github.com/grafana
 
